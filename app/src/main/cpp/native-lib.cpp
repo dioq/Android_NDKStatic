@@ -19,7 +19,7 @@ Java_com_my_ndkstatic_MainActivity_stringFromJNI2(JNIEnv *env, jobject thiz) {
 std::string jstring2str(JNIEnv *env, jstring jstr) {
     char *rtn = NULL;
     jclass clsstring = env->FindClass("java/lang/String");
-    jstring strencode = env->NewStringUTF("GB2312");
+    jstring strencode = env->NewStringUTF("utf-8");
     jmethodID mid = env->GetMethodID(clsstring, "getBytes", "(Ljava/lang/String;)[B");
     jbyteArray barr = (jbyteArray) env->CallObjectMethod(jstr, mid, strencode);
     jsize alen = env->GetArrayLength(barr);
@@ -29,9 +29,12 @@ std::string jstring2str(JNIEnv *env, jstring jstr) {
         memcpy(rtn, ba, alen);
         rtn[alen] = 0;
     }
-    env->ReleaseByteArrayElements(barr, ba, 0);
+
     std::string stemp(rtn);
-    free(rtn);
+    env->ReleaseByteArrayElements(barr, ba, 0);//释放内存
+    env->DeleteLocalRef(strencode);//释放内存
+    env->DeleteLocalRef(clsstring);//释放内存
+    free(rtn);//释放内存
     return stemp;
 }
 
