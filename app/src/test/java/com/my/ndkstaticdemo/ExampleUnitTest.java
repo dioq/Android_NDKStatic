@@ -1,4 +1,4 @@
-package com.my.ndkstatic;
+package com.my.ndkstaticdemo;
 
 import org.junit.Test;
 

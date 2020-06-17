@@ -25,15 +25,13 @@ std::string jstring2str(JNIEnv *env, jstring jstr) {
 
 extern "C"
 JNIEXPORT jstring JNICALL
-Java_com_my_ndkstatic_util_MyUtil_stringFromJNI2(JNIEnv *env, jobject thiz) {
+Java_com_my_ndkstaticdemo_util_MyUtil_stringFromJNI2(JNIEnv *env, jobject thiz) {
     // TODO: implement stringFromJNI2()
     std::string newvalue = "这是我新建的方法";
     return env->NewStringUTF(newvalue.c_str());
-}
-
-extern "C"
+}extern "C"
 JNIEXPORT jstring JNICALL
-Java_com_my_ndkstatic_util_MyUtil_handleString(JNIEnv *env, jobject thiz, jstring str) {
+Java_com_my_ndkstaticdemo_util_MyUtil_handleString(JNIEnv *env, jobject thiz, jstring str) {
     // TODO: implement handleString()
     std::string str1 = "基础值:";
 

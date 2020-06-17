@@ -1,4 +1,4 @@
-package com.my.ndkstatic;
+package com.my.ndkstaticdemo;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-import com.my.ndkstatic.util.MyUtil;
+import com.my.ndkstaticdemo.util.MyUtil;
 
 public class MainActivity extends AppCompatActivity {
 

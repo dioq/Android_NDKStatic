@@ -1,4 +1,4 @@
-package com.my.ndkstatic;
+package com.my.ndkstaticdemo;
 
 import android.content.Context;
 
