@@ -27,7 +27,7 @@ extern "C"
 JNIEXPORT jstring JNICALL
 Java_com_my_ndkstaticdemo_util_MyUtil_stringFromJNI2(JNIEnv *env, jobject thiz) {
     // TODO: implement stringFromJNI2()
-    std::string newvalue = "这是我新建的方法";
+    std::string newvalue = "这是我新建的方法 from static";
     return env->NewStringUTF(newvalue.c_str());
 }extern "C"
 JNIEXPORT jstring JNICALL
